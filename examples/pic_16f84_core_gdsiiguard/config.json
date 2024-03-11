@@ -1,0 +1,5 @@
+{
+    "clk": ["clk_i"],
+    "rst": ["pon_rst_n_i"],
+    "trigger": ["eep_dat_o[0]"]
+}
