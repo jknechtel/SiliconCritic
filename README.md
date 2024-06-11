@@ -57,3 +57,6 @@ Type 'man IMPSP-2020' for more detail.
 **ERROR: (IMPSP-2021):	Could not legalize <9> instances in the design. Check warning message IMPSP-270, IMPSP-452, IMPSP-2024, IMPSP-2039, IMPSP-2040, IMPSP-2042 or IMPSP-2020 in log file for more details.
 ```
 
+## Acknowledgements
+
+`GDSII-Guard` makes use of evaluation scripts from the ISPD22 contest. The original scripts can be found at [here](https://drive.google.com/file/d/1oz-qoB13UM_LmZcEjIV9gMuinNlxothd/view?usp=sharing). More details about the contest can be found on the [ISPD22 Contest website](https://wp.nyu.edu/ispd_22_contest/) and the [paper](https://dl.acm.org/doi/abs/10.1145/3505170.3511046). We are grateful to Johann Knechtel and the entire ISPD22 team for making these resources available to the community.
