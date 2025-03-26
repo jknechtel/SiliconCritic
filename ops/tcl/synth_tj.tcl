@@ -39,7 +39,8 @@ report timing -lint
 
 set syn_map_effort high
 #*Synthesis
-synthesize -to_mapped
+syn_generic
+syn_map
 
 report timing > reports/timing.rpt
 report gates  > reports/cell.rpt
