@@ -81,7 +81,7 @@ class SiliconCritic:
             f.write("".join(preproc_tcl_template_content))
 
         p = subprocess.Popen(
-            f"innovus -stylus -files {preproc_tcl_path} -no_cmd -no_logv -log LOG/innovus.log -no_gui",
+            f"innovus -wait 720 -stylus -files {preproc_tcl_path} -no_cmd -no_logv -log LOG/innovus.log -no_gui",
             cwd=self.work_dir,
             shell=True,
         )

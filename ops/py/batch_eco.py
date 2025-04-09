@@ -15,6 +15,6 @@ def convert_trojan_module(ports, candidates):
 
 def run_eco(design_dir, eco_tcl):
     print(f"Run ECO and eval: {design_dir}")
-    cmd = f"innovus -stylus -files {eco_tcl} -no_cmd -no_logv -log LOG/innovus -no_gui > /dev/null 2>&1"
+    cmd = f"innovus -wait 720 -stylus -files {eco_tcl} -no_cmd -no_logv -log LOG/innovus -no_gui > /dev/null 2>&1"
     proc = subprocess.Popen(cmd, cwd=design_dir, shell=True)
     assert proc.wait() == 0, f"ECO failed in {design_dir}!"
