@@ -1,10 +1,14 @@
 set_multi_cpu_usage -local_cpu 8
 
+set_db read_db_stop_at_design_in_memory false
+
 set_db eco_honor_dont_touch true
 set_db eco_honor_fixed_status true
 
 read_db ../../design_Tjfree.dat
 set TOP_DESIGN [get_db current_design .name]
+
+mkdir -p reports
 
 if {[catch {eco_design ../../design_Tjfree.dat ${TOP_DESIGN} design_Tjin.vh -no_add_filler}]} {
     ## UNPLACED insts
