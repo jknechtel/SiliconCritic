@@ -1,12 +1,13 @@
 set_multi_cpu_usage -local_cpu 8
 
-set_db read_db_stop_at_design_in_memory false
-
 set_db eco_honor_dont_touch true
 set_db eco_honor_fixed_status true
 
-read_db ../../design_Tjfree.dat
-set TOP_DESIGN [get_db current_design .name]
+set TOP_DESIGN pic_16f84_core
+## NOTE can be done like that, but it's risky to reset db within the same invs session; could also be done through parsing of design files, etc.; for simplicity for now, just hardcoded though
+#set_db read_db_stop_at_design_in_memory false
+#read_db ../../design_Tjfree.dat
+#set TOP_DESIGN [get_db current_design .name]
 
 mkdir -p reports
 
