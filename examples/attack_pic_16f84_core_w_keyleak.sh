@@ -7,4 +7,4 @@ python3 main.py --work_dir work_pic16f84core \
     --trojan_rtl examples/keyleak/Trojan.v \
     --config_json examples/pic_16f84_core/config.json \
     --top_module pic_16f84_core \
-    --n_procs 8
+    --n_procs 30
