@@ -18,14 +18,31 @@ set_db timing_analysis_type ocv
 ## Delete filler cells
 # delete_filler -prefix FILL
 
-## Fix all insts and nets
-foreach cell [get_db insts] {
-    set_db $cell .dont_touch true
-    set_db $cell .place_status fixed
-}
-# foreach net [get_db nets -if {!.is_power && !.is_ground}] {
-#     set_dont_touch $net true
-# }
+## rev I: turn off don't touch
+## NOTE: don't touch on nets was already off in orig code
+### Fix all insts and nets
+#foreach cell [get_db insts] {
+#    set_db $cell .dont_touch true
+#    set_db $cell .place_status fixed
+#}
+## foreach net [get_db nets -if {!.is_power && !.is_ground}] {
+##     set_dont_touch $net true
+## }
+
+# rev II: place or opt design
+#
+# NOTE place_design works better in general
+place_design -incremental
+#
+#opt_design -incremental
+## NOTE opt_design: full pass, arguably too aggressive
+##opt_design
+## NOTE opt_area equivalent to reclaimArea
+##opt_area
+#
+# NOTE either way, run reroute and post-route opt after that
+route_global_detail
+opt_design -post_route
 
 ## Export design and netlist
 write_db design_Tjfree.dat -lib
