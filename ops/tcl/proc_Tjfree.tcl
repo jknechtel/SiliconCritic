@@ -1,5 +1,20 @@
 set_multi_cpu_usage -local_cpu 8
 
+# process setting
+set_db design_process_node 45
+
+# init activitiy factors
+set_default_switching_activity -sequential_activity 0.2
+
+# clock propagation
+set_interactive_constraint_modes [all_constraint_modes -active]
+reset_propagated_clock [all_clocks]
+update_io_latency -verbose
+set_propagated_clock [all_clocks]
+
+# timing setting
+set_db timing_analysis_type ocv
+
 ## Delete filler cells
 # delete_filler -prefix FILL
 
